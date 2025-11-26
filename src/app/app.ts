@@ -1,15 +1,29 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import {Footer} from './custom-components/footer/footer';
-import {Header} from './custom-components/header/header';
-import {About} from './custom-components/about/about';
+import { Component } from '@angular/core';
+
+// Import components
+import { HeaderComponent } from './components/header/header';
+import { HeroComponent } from './components/hero/hero';
+import { AboutComponent } from './components/about/about';
+import { ServicesComponent } from './components/services/services';
+import { PortfolioComponent } from './components/portfolio/portfolio';
+import { ContactComponent } from './components/contact/contact';
+import { FooterComponent } from './components/footer/footer';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Footer, Header, About],
+  standalone: true,
+  imports: [
+    HeaderComponent,
+    HeroComponent,
+    AboutComponent,
+    ServicesComponent,
+    PortfolioComponent,
+    ContactComponent,
+    FooterComponent
+  ],
   templateUrl: './app.html',
-  styleUrl: './app.scss'
+  styleUrls: ['./app.scss']
 })
-export class App {
-  protected readonly title = signal('portfolio');
+export class AppComponent {
+  title = 'bootcamp-portfolio';
 }

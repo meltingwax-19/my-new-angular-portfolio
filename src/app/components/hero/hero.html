@@ -1,1 +1,28 @@
-<p>hero works!</p>
+<section id="hero" class="hero section-shell">
+  <div class="hero-inner" data-aos="fade-up">
+    <!-- LEFT: TEXT -->
+    <div class="hero-content">
+      <h1 class="hero-title">{{ name }}</h1>
+
+      <p class="hero-im">{{ heroLine }}</p>
+
+      <p class="hero-subtitle">
+        {{ tagline }}
+      </p>
+
+      <div class="hero-buttons">
+        <a [href]="primaryCtaTarget" class="btn btn-primary me-2">
+          {{ primaryCtaLabel }}
+        </a>
+        <a [href]="secondaryCtaTarget" class="btn btn-outline-light">
+          {{ secondaryCtaLabel }}
+        </a>
+      </div>
+    </div>
+
+    <!-- RIGHT: PHOTO -->
+    <div class="hero-photo-wrapper" aria-hidden="true">
+      <img [src]="heroImageSrc" [alt]="heroImageAlt" class="hero-photo" />
+    </div>
+  </div>
+</section>

@@ -1,0 +1,44 @@
+:host {
+  display: block;
+}
+
+/* --- PROFILE BLOCK (SIDEBAR AVATAR) ------------------------------- */
+
+/* Wrapper around the image + name + socials */
+.profile {
+  /* more breathing room, closer to the original demo */
+  padding: 2.25rem 1.75rem 2rem;
+  text-align: center;
+}
+
+/* Profile image itself */
+.profile img {
+  display: block;
+  /* make it larger and give it good margins */
+  width: 165px !important;
+  /* !important to beat main.css */
+  height: auto;
+  margin: 0 auto 1.3rem;
+  /* space below the image */
+  border-radius: 1.25rem;
+  /* keep the rounded-rect look */
+}
+
+/* Name under the avatar */
+.profile h1 {
+  font-size: 1.15rem;
+  margin-bottom: 1.5rem;
+}
+
+/* --- RESPONSIVE TWEAKS ------------------------------------------- */
+
+@media (max-width: 991.98px) {
+  .profile {
+    padding-top: 1.5rem;
+  }
+
+  .profile img {
+    width: 135px !important;
+    margin-bottom: 1.1rem;
+  }
+}

@@ -1,0 +1,133 @@
+:host {
+  display: block;
+}
+
+.resume {
+  position: relative;
+}
+
+/* Top heading area */
+.resume-header {
+  margin-bottom: 2.5rem;
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    max-width: 36rem;
+  }
+}
+
+/* Underline for the Resume title */
+.resume-header h2.section-title {
+  position: relative;
+  text-align: center;
+  margin-bottom: 2.75rem;
+  padding-bottom: 1.1rem;
+}
+
+/* long grey line */
+.resume-header h2.section-title::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  width: 160px;
+  height: 2px;
+  background-color: var(--muted-border-color);
+  border-radius: 999px;
+}
+
+/* short green line in the middle */
+.resume-header h2.section-title::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  width: 70px;
+  height: 4px;
+  background-color: var(--accent-color);
+  border-radius: 999px;
+}
+
+/* Two-column grid on desktop, single column on mobile */
+.resume-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.75rem 2rem;
+}
+
+/* Each card */
+.resume-card {
+  background: #1e2735;
+  /* a bit lighter than page background */
+  border-radius: 1.25rem;
+  padding: 1.75rem 2rem;
+  border: 1px solid rgba(34, 231, 161, 0.14);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+}
+
+/* Card titles */
+.resume-card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+/* Section label: Summary / Experience / Education / Skills */
+.resume-section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: #22e7a1;
+  margin-bottom: 0.75rem;
+}
+
+/* Lists inside cards */
+.resume-card ul {
+  margin: 0.75rem 0 0;
+  padding-left: 1.15rem;
+
+  li {
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* Key/value rows in Skills card */
+.resume-skill-row {
+  margin-bottom: 0.6rem;
+
+  strong {
+    color: #22e7a1;
+    font-weight: 600;
+  }
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 992px) {
+  .resume-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 576px) {
+  .resume-header {
+    margin-bottom: 2rem;
+
+    h2 {
+      font-size: 1.7rem;
+    }
+  }
+
+  .resume-card {
+    padding: 1.5rem 1.4rem;
+  }
+}

@@ -1,0 +1,58 @@
+<section id="resume" class="resume section-shell">
+  <div class="resume-header">
+    <h2 class="section-title">Resume</h2>
+
+    <p>
+      {{ intro }}
+    </p>
+  </div>
+
+  <div class="resume-grid">
+    <!-- SUMMARY -->
+    <article class="resume-card">
+      <div class="resume-section-label">Summary</div>
+      <h3 class="resume-card-title">{{ summaryName }}</h3>
+
+      <p>{{ summaryRole }}</p>
+
+      <ul>
+        <li *ngFor="let point of summaryPoints">{{ point }}</li>
+      </ul>
+    </article>
+
+    <!-- EXPERIENCE -->
+    <article class="resume-card">
+      <div class="resume-section-label">Experience</div>
+      <h3 class="resume-card-title">{{ experienceTitle }}</h3>
+
+      <p>{{ experienceMeta }}</p>
+
+      <ul>
+        <li *ngFor="let item of experiencePoints">{{ item }}</li>
+      </ul>
+    </article>
+
+    <!-- EDUCATION -->
+    <article class="resume-card">
+      <div class="resume-section-label">Education</div>
+      <h3 class="resume-card-title">{{ educationTitle }}</h3>
+
+      <p>{{ educationMeta }}</p>
+
+      <p>
+        {{ educationBody }}
+      </p>
+    </article>
+
+    <!-- SKILLS -->
+    <article class="resume-card">
+      <div class="resume-section-label">Skills</div>
+      <h3 class="resume-card-title">{{ skillsTitle }}</h3>
+
+      <div class="resume-skill-row" *ngFor="let row of skillsRows">
+        <strong>{{ row.label }}:</strong>
+        {{ row.value }}
+      </div>
+    </article>
+  </div>
+</section>

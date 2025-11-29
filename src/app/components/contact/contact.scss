@@ -1,0 +1,134 @@
+:host {
+  display: block;
+}
+
+.contact {
+  position: relative;
+}
+
+.contact-header {
+  margin-bottom: 2.5rem;
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    max-width: 36rem;
+  }
+}
+
+/* Underline for the Contact title */
+.contact-header h2.section-title {
+  position: relative;
+  text-align: center;
+  margin-bottom: 2.75rem;
+  padding-bottom: 1.1rem;
+}
+
+/* long grey line */
+.contact-header h2.section-title::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  width: 160px;
+  height: 2px;
+  background-color: var(--muted-border-color);
+  border-radius: 999px;
+}
+
+/* short green line in the middle */
+.contact-header h2.section-title::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  width: 70px;
+  height: 4px;
+  background-color: var(--accent-color);
+  border-radius: 999px;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.2fr);
+  gap: 2.5rem;
+}
+
+/* Left text column */
+.contact-info-block h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.75rem;
+}
+
+.contact-info-block p {
+  margin-bottom: 0.75rem;
+  max-width: 26rem;
+}
+
+/* Right form column */
+.contact-form label {
+  display: block;
+  font-size: 0.9rem;
+  margin-bottom: 0.35rem;
+}
+
+.contact-form .form-control,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.75rem 0.9rem;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: #141b25;
+  color: #f5f5f5;
+  margin-bottom: 1rem;
+}
+
+.contact-form textarea {
+  min-height: 160px;
+  resize: vertical;
+}
+
+.contact-form .form-control::placeholder,
+.contact-form textarea::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* Button accent */
+.contact-form button.btn-primary {
+  background-color: #22e7a1;
+  border-color: #22e7a1;
+
+  &:hover {
+    background-color: #29f0aa;
+    border-color: #29f0aa;
+  }
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 992px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .contact-header h2 {
+    font-size: 1.7rem;
+  }
+
+  .contact-info-block p {
+    line-height: 1.9;
+  }
+
+  .contact-form .form-control,
+  .contact-form textarea {
+    font-size: 0.98rem;
+  }
+}

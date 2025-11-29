@@ -1,1 +1,47 @@
-<p>contact works!</p>
+<section id="contact" class="contact section-shell">
+  <div class="contact-header">
+    <h2 class="section-title">{{ title }}</h2>
+
+    <p>
+      {{ intro }}
+    </p>
+  </div>
+
+  <div class="contact-grid">
+    <!-- LEFT: TEXT / DETAILS -->
+    <div class="contact-info-block">
+      <h3>{{ blockHeading }}</h3>
+      <p>
+        {{ blockText }}
+      </p>
+
+      <p>{{ emailLabel }}</p>
+      <p><strong>{{ email }}</strong></p>
+
+      <p>{{ locationLabel }}</p>
+      <p>{{ location }}</p>
+    </div>
+
+    <!-- RIGHT: FORM -->
+    <form class="contact-form" novalidate>
+      <div class="mb-3">
+        <label for="contact-name">{{ formNameLabel }}</label>
+        <input id="contact-name" type="text" class="form-control" [placeholder]="formNamePlaceholder" />
+      </div>
+
+      <div class="mb-3">
+        <label for="contact-email">{{ formEmailLabel }}</label>
+        <input id="contact-email" type="email" class="form-control" [placeholder]="formEmailPlaceholder" />
+      </div>
+
+      <div class="mb-3">
+        <label for="contact-message">{{ formMessageLabel }}</label>
+        <textarea id="contact-message" class="form-control" [placeholder]="formMessagePlaceholder"></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-primary">
+        {{ submitLabel }}
+      </button>
+    </form>
+  </div>
+</section>

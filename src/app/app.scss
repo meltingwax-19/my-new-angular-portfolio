@@ -1,0 +1,75 @@
+:host {
+  display: block;
+}
+
+/* =========
+   APP LAYOUT
+   ========= */
+
+.app-shell {
+  display: flex;
+  min-height: 100vh;
+  background-color: #111827; // matches your dark theme
+}
+
+/* Sidebar column with profile + nav */
+.app-sidebar {
+  flex: 0 0 280px;
+  /* width of the sidebar */
+  max-width: 280px;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  z-index: 100;
+}
+
+/* Make header fill the sidebar column */
+.app-sidebar app-header {
+  display: block;
+  height: 100%;
+}
+
+/* Main content column */
+.app-main {
+  flex: 1 1 auto;
+  min-height: 100vh;
+  overflow: visible;
+  /* don't clip sections */
+}
+
+/* Generic section spacing (hero, about, resume, etc.) */
+.section {
+  padding: 5rem 4rem;
+}
+
+/* Avoid old global margins interfering */
+main {
+  margin: 0;
+}
+
+/* =========
+   RESPONSIVE
+   ========= */
+
+@media (max-width: 991.98px) {
+  .app-shell {
+    display: block;
+  }
+
+  .app-sidebar {
+    position: static;
+    width: 100%;
+    max-width: none;
+    height: auto;
+    overflow: visible;
+  }
+
+  .app-main {
+    min-height: auto;
+  }
+
+  .section {
+    padding: 4rem 1.5rem;
+  }
+}

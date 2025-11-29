@@ -1,0 +1,81 @@
+:host {
+  display: block;
+}
+
+.footer {
+  /* Use the same width shell but customise the vertical padding
+     so the text sits a bit lower in the footer bar */
+  padding-block: 2.8rem 1.4rem;
+  /* more top, a bit less bottom */
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+/* Flex row: left block + right block */
+.footer-inner {
+  display: flex;
+  align-items: flex-end;
+  /* line up along the bottom */
+  justify-content: space-between;
+  /* push to far left & right */
+  gap: 1.75rem;
+}
+
+/* LEFT SIDE  ------------------------------------------------ */
+
+.footer-main {
+  text-align: left;
+  /* override any global center text rules */
+}
+
+.footer-name {
+  margin: 0 0 0.25rem;
+  font-weight: 500;
+}
+
+.footer-note {
+  margin: 0;
+  opacity: 0.8;
+}
+
+/* RIGHT SIDE  ----------------------------------------------- */
+
+.footer-links {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  text-align: right;
+  /* text itself right-aligned inside links */
+}
+
+.footer-links a {
+  font-size: 0.9rem;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.72);
+  transition: color 0.18s ease-out;
+}
+
+.footer-links a:hover {
+  color: var(--accent-color, #22e7a1);
+}
+
+/* MOBILE  --------------------------------------------------- */
+
+@media (max-width: 768px) {
+  .footer {
+    padding-block: 2.2rem 1.6rem;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-links {
+    justify-content: flex-start;
+    text-align: left;
+  }
+}

@@ -1,0 +1,122 @@
+/* Global styles entry point for the portfolio app */
+
+/* Import vendor CSS from the template.
+   Paths are relative to this file (src/styles.scss) */
+@import '../public/assets/vendor/bootstrap/css/bootstrap.min.css';
+@import '../public/assets/vendor/bootstrap-icons/bootstrap-icons.css';
+@import '../public/assets/vendor/aos/aos.css';
+@import '../public/assets/vendor/glightbox/css/glightbox.min.css';
+@import '../public/assets/vendor/swiper/swiper-bundle.min.css';
+@import '../public/assets/css/main.css';
+
+/* ----------------- CSS VARIABLES ----------------- */
+
+:root {
+   /* Accent green – matches sidebar highlight */
+   --accent-color: #22e7a1;
+   /* Soft grey for the long underline */
+   --muted-border-color: rgba(255, 255, 255, 0.35);
+}
+
+/* ----------------- LAYOUT SHELL ------------------ */
+
+/* Push main content to the right so it's not under the sidebar header */
+.main {
+   margin-left: 260px;
+   /* adjust if needed: 260–280px depending on header width */
+}
+
+/* Shared layout wrapper for main sections */
+.section-shell {
+   max-width: 1120px;
+   margin: 0 auto;
+   padding: 4rem 5vw 4.5rem;
+}
+
+/* Helpful on mobile to keep text from touching the edges */
+@media (max-width: 991.98px) {
+   #main {
+      width: 100%;
+      margin: 0;
+      padding-inline: 1.5rem;
+   }
+}
+
+@media (max-width: 768px) {
+   .section-shell {
+      padding: 3rem 1.5rem 3.5rem;
+   }
+}
+
+/* ----------------- TYPOGRAPHY -------------------- */
+
+h1,
+h2,
+h3 {
+   letter-spacing: 0.02em;
+}
+
+p {
+   line-height: 1.7;
+}
+
+/* ----------------- CARD PANEL -------------------- */
+
+.card-panel {
+   background: #1e2735;
+   /* a bit lighter than the page bg */
+   border-radius: 1.25rem;
+   padding: 1.75rem 2rem;
+   border: 1px solid rgba(34, 231, 161, 0.14);
+   box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+}
+
+/* ----------------- SECTION TITLES ----------------
+   This controls the heading + double underline for:
+   About, Resume, Portfolio, Services, Contact.
+   It assumes your markup is:
+
+   <section class="... section-shell">
+     <h2 class="section-title">Title</h2>
+   </section>
+--------------------------------------------------- */
+
+.section-shell .section-title {
+   position: relative;
+   display: block;
+   text-align: center;
+   font-size: clamp(2.1rem, 2.6vw, 2.8rem);
+   font-weight: 600;
+
+   /* No extra top margin so spacing is consistent */
+   margin: 0 0 2.5rem;
+   padding-bottom: 1.6rem;
+   /* gap between text and underline */
+}
+
+/* Long soft grey line */
+.section-shell .section-title::after {
+   content: "";
+   position: absolute;
+   left: 50%;
+   bottom: 0;
+   transform: translateX(-50%);
+   width: 160px;
+   height: 2px;
+   background-color: var(--muted-border-color);
+   border-radius: 999px;
+}
+
+/* Short green line on top of the grey line */
+.section-shell .section-title::before {
+   content: "";
+   position: absolute;
+   left: 50%;
+   bottom: -1px;
+   /* lets the green line “sit” slightly over the grey */
+   transform: translateX(-50%);
+   width: 70px;
+   height: 4px;
+   background-color: var(--accent-color);
+   border-radius: 999px;
+}

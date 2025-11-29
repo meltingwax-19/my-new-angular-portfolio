@@ -1,1 +1,31 @@
-<p>about works!</p>
+<section id="about" class="about section-shell">
+  <div class="about-inner" data-aos="fade-up">
+    <!-- LEFT: PHOTO -->
+    <div class="about-photo-wrapper">
+      <img src="assets/img/profile/About-1.png" alt="Portrait of {{ name }}" class="about-photo" />
+    </div>
+
+    <!-- RIGHT: CONTENT -->
+    <div class="about-content">
+      <h2 class="section-title">{{ title }}</h2>
+
+      <p class="about-lead">
+        {{ lead }}
+      </p>
+
+      <p>
+        {{ bodyOne }}
+      </p>
+
+      <p>
+        {{ bodyTwo }}
+      </p>
+
+      <ul class="about-list">
+        <li>{{ highlightOne }}</li>
+        <li>{{ highlightTwo }}</li>
+        <li>{{ highlightThree }}</li>
+      </ul>
+    </div>
+  </div>
+</section>

@@ -1,1 +1,26 @@
-<p>services works!</p>
+<section id="services" class="services section-shell">
+  <div class="services-header">
+    <h2 class="section-title">Services</h2>
+
+    <p class="section-intro">
+      {{ intro }}
+    </p>
+  </div>
+
+  <div class="services-grid">
+    <!-- Each card reuses the global "card-panel" look -->
+    <article class="service-card card-panel" *ngFor="let service of services">
+      <div class="service-card-icon">
+        <i class="bi" [ngClass]="service.icon" aria-hidden="true"></i>
+      </div>
+
+      <h3 class="service-card-title">
+        {{ service.title }}
+      </h3>
+
+      <p class="service-card-text">
+        {{ service.body }}
+      </p>
+    </article>
+  </div>
+</section>
